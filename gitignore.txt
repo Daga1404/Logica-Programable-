@@ -1,0 +1,13 @@
+*.bak
+db/
+incremental_db/
+output_files/
+.qsys_edit/
+simulation/work/
+simulation/transcript
+simulation/vsim.wlf
+simulation/modelsim.ini
+/simulation/desktop.ini
+*.qws
+*.rpt
+simulation/modelsim
