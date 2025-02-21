@@ -1,56 +1,41 @@
-module clk_divider #(
-    parameter CONST_N = 3;
-) (
-    input clk,
-    input rst,
-    output reg clk_div
+module clk_divider #(parameter constantN=50000000)
+(
+
+input clk, rst,
+
+output reg clk_div
+
 );
 
-    reg [ceillog2(CONST_N)-1:0] count;
+reg [$clog2(constantN)-1:0] count;
 
-    always @(posedge clk or posedge rst)
-        begin
-            if (rst)
-                begin
-                    count <= 0;
-                end
-            else if (count == CONST_N-1)
-                begin
-                    count <= 0;
-                end
-            else
-                begin
-                    count <= count + 1;
-                end
-        end
+always@(posedge clk or posedge rst)
+begin
 
-    always @(posedge clk or posedge rst)
-        begin
-            if (rst)
-                begin
-                    clk_div <= 0;
-                end
-            else if (count == CONST_N-1)
-                begin
-                    clk_div <= ~clk_div;
-                end
-            else
-                begin
-                    clk_div <= clk_div;
-                end
-        end
+if(rst)
+count<=0;
 
-// log function
+else if (count==constantN-1)
+count<=0;
 
-    function integer ceillog2;
-        input integer data;
-        integer i, result;
-            begin
-                for (i = 0; 2**i < data; i = i+1)
-                    begin
-                        result = i + 1;
-                        ceillog2 = result;
-                    end
-            end 
-    endfunction   
+else
+count<= count+1;
+
+end
+
+always@(posedge clk or posedge rst)
+begin
+
+
+if(rst==1)
+clk_div<=0;
+
+else if (count==constantN-1)
+clk_div<=~clk_div;
+
+else
+clk_div<=clk_div;
+
+end
+
 endmodule

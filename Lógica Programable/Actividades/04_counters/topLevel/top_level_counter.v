@@ -1,32 +1,47 @@
 module top_level_counter #(
-    // No parameters needed
+    parameter IN = 4
 )(
-    input CLOCK_50, 
-    input [9:0] SW,
+    input CLOCK_50,
+    output [0:6] HEX0, HEX1
     output [9:0] LEDR
 );
-    wire DB_to_OS, OS_to_COUNT;
-    
-    // Debouncer
-    debouncer DB (
-        .clk(CLOCK_50),
-        .rst_a_p(SW[9]),
-        .debouncer_in(SW[0]),
-        .debouncer_out(DB_to_OS)
+    wire CLOCK_50_div, CLOCK_50_rst;
+    wire [IN-1:0] count_sec;
+
+    reg [IN-1:0] count_reg;
+    reg clock_aux; 
+
+    clk_divider CD (
+        .clk(CLOCK_50), 
+        .rst(0), 
+        .clk_div(CLOCK_50_div)
     );
+    counter SECONDS (
+        .clk(CLOCK_50_div),
+        .rst(0), 
+        .enable(1), 
+        .count(count_sec));
     
-    // One-Shot
-    one_shot OS (
-        .clk(CLOCK_50),
-        .button(DB_to_OS),
-        .one_shot_button(OS_to_COUNT)
-    );
-    
-    // Counter
-    counter COUNT (
-        .clk(CLOCK_50),
-        .rst(SW[9]),
-        .enable(OS_to_COUNT),
-        .count(LEDR[3:0])
-    );
+    bcd_decoder BD_SECONDS (
+        .bcd_in(count_sec), 
+        .bcd_out1(HEX0), 
+        .bcd_out2(HEX1));
+
+    /*always @(posedge CLOCK_50_div or posedge CLOCK_50_rst)
+    begin
+        if (CLOCK_50_rst)
+        begin
+            clock_aux <= 1'b0;
+            count_reg <= 0;
+        end
+        else
+
+        begin
+            count_reg <= count_sec;
+            if (count_reg >= 60)
+                clock_aux <= 1'b1;
+            else
+                clock_aux <= 1'b0;
+        end
+    end*/
 endmodule
