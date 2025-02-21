@@ -1,4 +1,4 @@
-module clk_divider #(parameter constantN=50000000)
+module clk_divider #(parameter constantN=25000000)
 (
 
 input clk, rst,
