@@ -1,14 +1,16 @@
 module counter #(
-    // No parameters needed
+    parameter OUT_WIDTH = 4
 )(
     input clk, rst, enable,
-    output reg [3:0] count
+    output reg [OUT_WIDTH-1:0] count
 );
-    always @(posedge clk) 
+    always @(posedge clk or posedge rst) 
         begin
             if (rst)
                 count <= 4'b0000;
             else if (enable)
                 count <= count + 1;
+            else 
+                count <= count;
         end
 endmodule

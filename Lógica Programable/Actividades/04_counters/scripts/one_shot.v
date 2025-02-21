@@ -1,6 +1,4 @@
-module one_shot #(
-    // No parameters needed
-)(
+module one_shot(
     input clk, button,
     output reg one_shot_button
 );
