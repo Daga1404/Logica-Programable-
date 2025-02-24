@@ -1,0 +1,123 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/simulation/questa
+T_opt
+!s110 1740407847
+V5AIHg:8[4WeHKKP@cMA8H1
+04 12 4 work debouncer_tb fast 0
+=1-246a0ee03cfe-67bc8426-2c2-40b4
+R0
+!s12b OEM100
+!s124 OEM10U3 
+o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2023.3;77
+vclk_divider
+2C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/scripts/clk_divider.v
+Z3 !s110 1740407845
+!i10b 1
+!s100 [Qe^5hj9X=kXi02>LIJ7?3
+IW<L^fFCgO>_N;`JeNNf4=1
+R1
+Z4 w1740407308
+8C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/scripts/clk_divider.v
+FC:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/scripts/clk_divider.v
+!i122 0
+L0 1 41
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2023.3;77
+r1
+!s85 0
+31
+Z7 !s108 1740407845.000000
+!s107 C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/scripts/clk_divider.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/scripts|C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/scripts/clk_divider.v|
+!i113 0
+Z8 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z9 !s92 -vlog01compat -work work +incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/scripts -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vdebouncer
+2C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/scripts/debouncer.v
+R3
+!i10b 1
+!s100 <9kId93l4z6d=>MT3_;i;0
+I:O>a<kiY5bEDRaC7zEmM_1
+R1
+R4
+8C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/scripts/debouncer.v
+FC:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/scripts/debouncer.v
+!i122 1
+L0 1 34
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/scripts/debouncer.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/scripts|C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/scripts/debouncer.v|
+!i113 0
+R8
+R9
+R2
+vdebouncer_tb
+Z10 2C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/testbenches/debouncer_tb.v
+R3
+R5
+r1
+!s85 0
+!i10b 1
+!s100 50fEUDnZ;HT[2L06SbMIl3
+I@[9c^V57dF8N?@:3Bc_GE3
+R1
+Z11 w1740407839
+Z12 8C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/testbenches/debouncer_tb.v
+Z13 FC:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/testbenches/debouncer_tb.v
+!i122 2
+L0 3 30
+R6
+31
+R7
+Z14 !s107 C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/testbenches/debouncer_tb.v|
+Z15 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/testbenches|C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/testbenches/debouncer_tb.v|
+!i113 0
+R8
+Z16 !s92 -vlog01compat -work work +incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/testbenches -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+Xdebouncer_tb_v_unit
+R10
+R3
+VV0oVHSmTzFMeMF`XYzKU]3
+r1
+!s85 0
+!i10b 1
+!s100 jnz8fAN[8TAUCo40TR_?K1
+IV0oVHSmTzFMeMF`XYzKU]3
+!i103 1
+S1
+R1
+R11
+R12
+R13
+!i122 2
+L0 1 0
+R6
+31
+R7
+R14
+R15
+!i113 0
+R8
+R16
+R2

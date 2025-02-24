@@ -7,7 +7,7 @@ module counter #(
     always @(posedge clk or posedge rst) 
         begin
             if (rst)
-                count <= 0;
+                count <= 4'b0000;
             else if (enable)
                 count <= count + 1;
             else 
