@@ -24,46 +24,51 @@
 # Copying c:/intelfpga_lite/23.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
+# vlog -vlog01compat -work work +incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/top_level_PWM {C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/top_level_PWM/top_level_PWM.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 09:05:00 on Feb 26,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/top_level_PWM" C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/top_level_PWM/top_level_PWM.v 
+# -- Compiling module top_level_PWM
+# 
+# Top level modules:
+# 	top_level_PWM
+# End time: 09:05:00 on Feb 26,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/scripts {C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/scripts/clk_divider.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 08:37:25 on Feb 24,2025
+# Start time: 09:05:00 on Feb 26,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/scripts" C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/scripts/clk_divider.v 
 # -- Compiling module clk_divider
 # 
 # Top level modules:
 # 	clk_divider
-# End time: 08:37:25 on Feb 24,2025, Elapsed time: 0:00:00
+# End time: 09:05:00 on Feb 26,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/scripts {C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/scripts/debouncer.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 08:37:25 on Feb 24,2025
+# Start time: 09:05:00 on Feb 26,2025
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/scripts" C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/scripts/debouncer.v 
 # -- Compiling module debouncer
 # 
 # Top level modules:
 # 	debouncer
-# End time: 08:37:25 on Feb 24,2025, Elapsed time: 0:00:00
+# End time: 09:05:00 on Feb 26,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/testbenches {C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/testbenches/debouncer_tb.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/testbenches {C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/testbenches/top_level_PWB_tb.v}
 # Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 08:37:25 on Feb 24,2025
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/testbenches" C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/testbenches/debouncer_tb.v 
-# ** Warning: C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/testbenches/debouncer_tb.v(1): (vlog-2283) Extra semicolon in $unit (global) scope.
-# ** Warning: C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/testbenches/debouncer_tb.v(32): (vlog-2284) Empty $unit scope found.
-# ** Warning: C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/testbenches/debouncer_tb.v(32): (vlog-2644) Conflicting semantics, "-vlog01compat" switch disables SystemVerilog support.
-# ** Warning: C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/testbenches/debouncer_tb.v(32): (vlog-2644) Conflicting semantics, "-vlog01compat" switch disables SystemVerilog support.
-# -- Compiling package debouncer_tb_v_unit
-# -- Compiling module debouncer_tb
+# Start time: 09:05:00 on Feb 26,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/testbenches" C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/testbenches/top_level_PWB_tb.v 
+# -- Compiling module top_level_PWM_tb
 # 
 # Top level modules:
-# 	debouncer_tb
-# End time: 08:37:25 on Feb 24,2025, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 4
+# 	top_level_PWM_tb
+# End time: 09:05:00 on Feb 26,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  debouncer_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" debouncer_tb 
-# Start time: 08:37:26 on Feb 24,2025
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  top_level_PWM_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" top_level_PWM_tb 
+# Start time: 09:05:01 on Feb 26,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Warning: C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/scripts/debouncer.v(14): (vopt-2685) [TFMPC] - Too few port connections for 'd0'.  Expected 5, found 3.
@@ -76,11 +81,15 @@
 # ** Warning: C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/scripts/debouncer.v(26): (vopt-2718) [TFMPC] - Missing connection for port 'prn'.
 # ** Warning: C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/scripts/debouncer.v(26): (vopt-2718) [TFMPC] - Missing connection for port 'clrn'.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=10.
-# Loading work.debouncer_tb(fast)
-# Loading work.debouncer(fast)
+# Loading work.top_level_PWM_tb(fast)
+# Loading work.top_level_PWM(fast)
 # Loading work.clk_divider(fast)
+# Loading work.debouncer(fast)
+# Loading work.clk_divider(fast__1)
 # Loading altera_ver.dff(fast)
 # Loading altera_ver.prim_gdff(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (10) does not match connection size (1) for port 'SW'. The port definition is at: C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/top_level_PWM/top_level_PWM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level_PWM_tb/uut File: C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/testbenches/top_level_PWB_tb.v Line: 8
 # 
 # add wave *
 # view structure
@@ -88,22 +97,38 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-add wave -position end  sim:/debouncer_tb/DUT/Q0
-add wave -position end  sim:/debouncer_tb/DUT/Q1
-add wave -position end  sim:/debouncer_tb/DUT/Q2
-add wave -position end  sim:/debouncer_tb/DUT/Q2_bar
-add wave -position end  sim:/debouncer_tb/DUT/slow_clk
-restart -f
+# ** Note: $stop    : C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/testbenches/top_level_PWB_tb.v(40)
+#    Time: 26050 ns  Iteration: 0  Instance: /top_level_PWM_tb
+# Break in Module top_level_PWM_tb at C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/testbenches/top_level_PWB_tb.v line 40
+add wave -position end  sim:/top_level_PWM_tb/uut/DC
+add wave -position end  sim:/top_level_PWM_tb/uut/DC_counter
+add wave -position end  sim:/top_level_PWM_tb/uut/pwm_out_reg
+restart
+# Closing VCD file "top_level_PWM_tb.vcd"
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-8009) Loading existing optimized design _opt
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=10.
-# Loading work.debouncer_tb(fast)
-# Loading work.debouncer(fast)
+# Loading work.top_level_PWM_tb(fast)
+# Loading work.top_level_PWM(fast)
 # Loading work.clk_divider(fast)
+# Loading work.debouncer(fast)
+# Loading work.clk_divider(fast__1)
 # Loading altera_ver.dff(fast)
 # Loading altera_ver.prim_gdff(fast)
-run -all
-# Break key hit
-# Simulation stop requested.
-# End time: 08:40:12 on Feb 24,2025, Elapsed time: 0:02:46
-# Errors: 0, Warnings: 10
+# ** Warning: (vsim-3015) [PCDPC] - Port size (10) does not match connection size (1) for port 'SW'. The port definition is at: C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/top_level_PWM/top_level_PWM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level_PWM_tb/uut File: C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/testbenches/top_level_PWB_tb.v Line: 8
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=10.
+# Loading work.top_level_PWM_tb(fast)
+# Loading work.top_level_PWM(fast)
+# Loading work.clk_divider(fast)
+# Loading work.debouncer(fast)
+# Loading work.clk_divider(fast__1)
+# Loading altera_ver.dff(fast)
+# Loading altera_ver.prim_gdff(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (10) does not match connection size (1) for port 'SW'. The port definition is at: C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/top_level_PWM/top_level_PWM.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /top_level_PWM_tb/uut File: C:/Users/dmart/Logica-Programable-/QuartusProjects/04_PWM/testbenches/top_level_PWB_tb.v Line: 8
+# End time: 09:07:43 on Feb 26,2025, Elapsed time: 0:02:42
+# Errors: 0, Warnings: 11

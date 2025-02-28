@@ -1,0 +1,178 @@
+# Reading pref.tcl
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2023.3 win64 Jul 17 2023
+# //
+# //  Copyright 1991-2023 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do 05_FSM_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Questa Intel Starter FPGA Edition-64 vmap 2023.3 Lib Mapping Utility 2023.07 Jul 17 2023
+# vmap work rtl_work 
+# Copying c:/intelfpga_lite/23.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/dmart/Logica-Programable-/LogicaProgramable/Practicas/05_FSM {C:/Users/dmart/Logica-Programable-/LogicaProgramable/Practicas/05_FSM/FSM.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 09:42:53 on Feb 25,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/dmart/Logica-Programable-/LogicaProgramable/Practicas/05_FSM" C:/Users/dmart/Logica-Programable-/LogicaProgramable/Practicas/05_FSM/FSM.v 
+# -- Compiling module FSM
+# 
+# Top level modules:
+# 	FSM
+# End time: 09:42:53 on Feb 25,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/dmart/Logica-Programable-/LogicaProgramable/Practicas/05_FSM {C:/Users/dmart/Logica-Programable-/LogicaProgramable/Practicas/05_FSM/FSM_tb.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 09:42:53 on Feb 25,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/dmart/Logica-Programable-/LogicaProgramable/Practicas/05_FSM" C:/Users/dmart/Logica-Programable-/LogicaProgramable/Practicas/05_FSM/FSM_tb.v 
+# -- Compiling module FSM_tb
+# 
+# Top level modules:
+# 	FSM_tb
+# End time: 09:42:53 on Feb 25,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  FSM_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" FSM_tb 
+# Start time: 09:42:53 on Feb 25,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "FSM(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.FSM_tb(fast)
+# Loading work.FSM(fast)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Time = 0 | clk = 0 | rst = 1 | enable = 0 | FSM_out = 0
+# Time = 5000 | clk = 1 | rst = 1 | enable = 0 | FSM_out = 0
+# Time = 10000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 15000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 20000 | clk = 0 | rst = 0 | enable = 1 | FSM_out = 0
+# Time = 25000 | clk = 1 | rst = 0 | enable = 1 | FSM_out = 0
+# Time = 30000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 35000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 40000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 45000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 50000 | clk = 0 | rst = 0 | enable = 1 | FSM_out = 1
+# Time = 55000 | clk = 1 | rst = 0 | enable = 1 | FSM_out = 0
+# Time = 60000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 65000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 70000 | clk = 0 | rst = 0 | enable = 1 | FSM_out = 0
+# Time = 75000 | clk = 1 | rst = 0 | enable = 1 | FSM_out = 0
+# Time = 80000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 85000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 90000 | clk = 0 | rst = 0 | enable = 1 | FSM_out = 0
+# Time = 95000 | clk = 1 | rst = 0 | enable = 1 | FSM_out = 0
+# Time = 100000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 105000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 110000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 115000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 120000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 125000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 130000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 135000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# ** Note: $stop    : C:/Users/dmart/Logica-Programable-/LogicaProgramable/Practicas/05_FSM/FSM_tb.v(47)
+#    Time: 140 ns  Iteration: 0  Instance: /FSM_tb
+# Break in Module FSM_tb at C:/Users/dmart/Logica-Programable-/LogicaProgramable/Practicas/05_FSM/FSM_tb.v line 47
+# Causality operation skipped due to absence of debug database file
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.FSM_tb(fast)
+# Loading work.FSM(fast)
+run -continue
+# Time = 0 | clk = 0 | rst = 1 | enable = 0 | FSM_out = 0
+# Time = 5000 | clk = 1 | rst = 1 | enable = 0 | FSM_out = 0
+# Time = 10000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 15000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 20000 | clk = 0 | rst = 0 | enable = 1 | FSM_out = 0
+# Time = 25000 | clk = 1 | rst = 0 | enable = 1 | FSM_out = 0
+# Time = 30000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 35000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 40000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 45000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 50000 | clk = 0 | rst = 0 | enable = 1 | FSM_out = 1
+# Time = 55000 | clk = 1 | rst = 0 | enable = 1 | FSM_out = 0
+# Time = 60000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 65000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 70000 | clk = 0 | rst = 0 | enable = 1 | FSM_out = 0
+# Time = 75000 | clk = 1 | rst = 0 | enable = 1 | FSM_out = 0
+# Time = 80000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 85000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 90000 | clk = 0 | rst = 0 | enable = 1 | FSM_out = 0
+# Time = 95000 | clk = 1 | rst = 0 | enable = 1 | FSM_out = 0
+# Time = 100000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 105000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 110000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 115000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 120000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 125000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 130000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 135000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# ** Note: $stop    : C:/Users/dmart/Logica-Programable-/LogicaProgramable/Practicas/05_FSM/FSM_tb.v(47)
+#    Time: 140 ns  Iteration: 0  Instance: /FSM_tb
+# Break in Module FSM_tb at C:/Users/dmart/Logica-Programable-/LogicaProgramable/Practicas/05_FSM/FSM_tb.v line 47
+add wave -position end  sim:/FSM_tb/uut/current_state
+add wave -position end  sim:/FSM_tb/uut/next_state
+run
+# Time = 140000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.FSM_tb(fast)
+# Loading work.FSM(fast)
+run -continue
+# Time = 0 | clk = 0 | rst = 1 | enable = 0 | FSM_out = 0
+# Time = 5000 | clk = 1 | rst = 1 | enable = 0 | FSM_out = 0
+# Time = 10000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 15000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 20000 | clk = 0 | rst = 0 | enable = 1 | FSM_out = 0
+# Time = 25000 | clk = 1 | rst = 0 | enable = 1 | FSM_out = 0
+# Time = 30000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 35000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 40000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 45000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 50000 | clk = 0 | rst = 0 | enable = 1 | FSM_out = 1
+# Time = 55000 | clk = 1 | rst = 0 | enable = 1 | FSM_out = 0
+# Time = 60000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 65000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 70000 | clk = 0 | rst = 0 | enable = 1 | FSM_out = 0
+# Time = 75000 | clk = 1 | rst = 0 | enable = 1 | FSM_out = 0
+# Time = 80000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 85000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 90000 | clk = 0 | rst = 0 | enable = 1 | FSM_out = 0
+# Time = 95000 | clk = 1 | rst = 0 | enable = 1 | FSM_out = 0
+# Time = 100000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 105000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 110000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 115000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 120000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 125000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 130000 | clk = 0 | rst = 0 | enable = 0 | FSM_out = 0
+# Time = 135000 | clk = 1 | rst = 0 | enable = 0 | FSM_out = 0
+# ** Note: $stop    : C:/Users/dmart/Logica-Programable-/LogicaProgramable/Practicas/05_FSM/FSM_tb.v(47)
+#    Time: 140 ns  Iteration: 0  Instance: /FSM_tb
+# Break in Module FSM_tb at C:/Users/dmart/Logica-Programable-/LogicaProgramable/Practicas/05_FSM/FSM_tb.v line 47
+# End time: 09:52:21 on Feb 25,2025, Elapsed time: 0:09:28
+# Errors: 0, Warnings: 1

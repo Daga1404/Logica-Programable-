@@ -1,9 +1,9 @@
 `timescale 1ns/1ps
 
-module debouncer_tb (
-    input reg clk, pb_in, rst,
-    output wire pb_out
-);
+module debouncer_tb ();
+    reg clk, pb_in, rst;
+    wire pb_out;
+	 
     debouncer DUT (
         .clk(clk),
         .pb_in(pb_in),

@@ -1,0 +1,7 @@
+
+State Machine - |floor_select|current_state
+Name current_state.DONE current_state.DELAY current_state.WAIT current_state.IDLE 
+current_state.IDLE 0 0 0 0 
+current_state.WAIT 0 0 1 1 
+current_state.DELAY 0 1 0 1 
+current_state.DONE 1 0 0 1 

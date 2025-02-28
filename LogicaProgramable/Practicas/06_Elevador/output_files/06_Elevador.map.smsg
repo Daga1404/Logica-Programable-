@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at floor_select.v(9): object "DELAY" differs only in case from object "delay" in the same scope File: C:/Users/dmart/Logica-Programable-/LogicaProgramable/Practicas/06_Elevador/scripts/floor_select.v Line: 9
+Info (10281): Verilog HDL Declaration information at door_FSM.v(7): object "closed" differs only in case from object "CLOSED" in the same scope File: C:/Users/dmart/Logica-Programable-/LogicaProgramable/Practicas/06_Elevador/scripts/door_FSM.v Line: 7

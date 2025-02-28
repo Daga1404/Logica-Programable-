@@ -1,0 +1,7 @@
+
+State Machine - |FSM_detector|fsm_detect:DETECT|current_state
+Name current_state.D current_state.C current_state.B current_state.A 
+current_state.A 0 0 0 0 
+current_state.B 0 0 1 1 
+current_state.C 0 1 0 1 
+current_state.D 1 0 0 1 
