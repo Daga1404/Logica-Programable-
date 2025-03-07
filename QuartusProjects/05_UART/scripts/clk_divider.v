@@ -5,31 +5,27 @@ module clk_divider #(parameter FREQ = 50)(
     localparam CLK_FREQ = 50_000_000;
     localparam COUNT_MAX = CLK_FREQ / (2*FREQ);
 
-    //reg [$clog2(CLK_FREQ)-1:0] count;
-	 reg [31:0] count;
+    reg [31:0] count;
 
-    always@(posedge clk or posedge rst)
+    always @(posedge clk or negedge rst)
+    begin
+        if (~rst)  // Active-low reset to match other modules
         begin
-            if(rst)
-            count<=0;
-
-            else if (count==COUNT_MAX-1)
-            count<=0;
-
-            else
-            count<= count+1;
+            count <= 0;
+            clk_div <= 0;
         end
-
-    always@(posedge clk or posedge rst)
+        else 
         begin
-            if(rst==1)
-            clk_div<=0;
-
-            else if (count==COUNT_MAX-1)
-            clk_div<=~clk_div;
-
+            if (count == COUNT_MAX-1)
+            begin
+                count <= 0;
+                clk_div <= ~clk_div;
+            end
             else
-            clk_div<=clk_div;
+            begin
+                count <= count + 1;
+                clk_div <= clk_div;
+            end
         end
-
+    end
 endmodule

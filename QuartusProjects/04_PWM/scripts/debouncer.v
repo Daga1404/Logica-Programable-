@@ -1,11 +1,11 @@
-module debouncer (
+module Debouncer (
     input clk, pb_in, rst,
     output pb_out
 );
  wire Q0, Q1, Q2, Q2_bar;
  wire slow_clk;
 
- clk_divider u1(
+ ClockDivider #(.FREQ(40)) u1(
     .clk(clk),
     .rst(rst),
     .clk_div(slow_clk)

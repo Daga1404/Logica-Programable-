@@ -1,13 +1,11 @@
 module one_shot(
-    input clk, button,
+    input clk, in_shot,
     output reg one_shot_button
 );
-    reg prev_btn;
-
+    reg delay_button;
     always @(posedge clk)
         begin
-            prev_btn <= button;
+            delay_button <= in_shot;
+            one_shot_button <= (delay_button ^ in_shot) & in_shot;
         end
-        assign one_shot_button = ~button & prev_btn;
-        
 endmodule

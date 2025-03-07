@@ -1,0 +1,47 @@
+|ROM_wr
+KEY[0] => KEY[0].IN1
+KEY[1] => KEY[1].IN1
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => SW[2].IN1
+SW[3] => SW[3].IN1
+SW[4] => SW[4].IN1
+SW[5] => SW[5].IN1
+SW[6] => SW[6].IN1
+SW[7] => SW[7].IN1
+SW[8] => SW[8].IN1
+SW[9] => SW[9].IN1
+LEDR[0] << ROM:wrapper.data
+LEDR[1] << ROM:wrapper.data
+LEDR[2] << ROM:wrapper.data
+LEDR[3] << ROM:wrapper.data
+LEDR[4] << ROM:wrapper.data
+LEDR[5] << ROM:wrapper.data
+LEDR[6] << ROM:wrapper.data
+LEDR[7] << ROM:wrapper.data
+LEDR[8] << ROM:wrapper.data
+LEDR[9] << ROM:wrapper.data
+LEDR[10] << ROM:wrapper.data
+
+
+|ROM_wr|ROM:wrapper
+ce => data.IN0
+read_en => data.IN1
+addr[0] => mem.RADDR
+addr[1] => mem.RADDR1
+addr[2] => mem.RADDR2
+addr[3] => mem.RADDR3
+addr[4] => mem.RADDR4
+addr[5] => mem.RADDR5
+addr[6] => mem.RADDR6
+addr[7] => mem.RADDR7
+data[0] <= data.DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= data.DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= data.DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= data.DB_MAX_OUTPUT_PORT_TYPE
+data[4] <= data.DB_MAX_OUTPUT_PORT_TYPE
+data[5] <= data.DB_MAX_OUTPUT_PORT_TYPE
+data[6] <= data.DB_MAX_OUTPUT_PORT_TYPE
+data[7] <= data.DB_MAX_OUTPUT_PORT_TYPE
+
+

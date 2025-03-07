@@ -12,136 +12,64 @@ Z0 !s99 nomlopt
 cModel Technology
 Z1 dC:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/simulation/questa
 T_opt
-!s110 1740760979
-VSX]iH@b;Z]3nzK`U@kik=0
-04 5 4 work TX_tb fast 0
-=1-246a0ee03cfe-67c1e793-13f-39b0
+!s110 1741189160
+Vl`f^ODiT^Se3c<hcW[^h`1
+04 5 4 work RX_tb fast 0
+=1-28d043685c43-67c87027-375-14ac
 R0
 !s12b OEM100
-!s124 OEM10U5 
+!s124 OEM10U2 
 o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work +acc
 Z2 tCvgOpt 0
 n@_opt
 OL;O;2023.3;77
-vclk_divider
-2C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/clk_divider.v
-Z3 !s110 1740760978
+vRX
+2C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/RX.v
+Z3 !s110 1741189159
 !i10b 1
-!s100 JH3d30JBPM3zhfdNHEM3<2
-I1<oMPl;[fobS4mbQOF9gF1
+!s100 RfciMe6@SMcV9EOHDem?h1
+ICL=13C[SP@4RcWcT98l[R0
 R1
-w1740580489
-8C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/clk_divider.v
-FC:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/clk_divider.v
+w1741185158
+8C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/RX.v
+FC:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/RX.v
 !i122 0
-L0 1 35
+L0 1 122
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 Z5 OL;L;2023.3;77
 r1
 !s85 0
 31
-!s108 1740760977.000000
-!s107 C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/clk_divider.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts|C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/clk_divider.v|
+Z6 !s108 1741189159.000000
+!s107 C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/RX.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts|C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/RX.v|
 !i113 0
-Z6 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z7 !s92 -vlog01compat -work work +incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z7 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+!s92 -vlog01compat -work work +incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
-vdebouncer
-2C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/debouncer.v
+n@r@x
+vRX_tb
+2C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/testbenches/RX_tb.v
 R3
 !i10b 1
-!s100 =XPA3ORHh@T>Ba;cCRO[21
-I:@k84z6lE;e7b59LSZDKi1
+!s100 EiL`b9N]RRo[5@e30hGBM1
+IF=Z2I62M1oKRJHFA>N3_^0
 R1
-Z8 w1740760938
-8C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/debouncer.v
-FC:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/debouncer.v
-!i122 2
-L0 1 34
-R4
-R5
-r1
-!s85 0
-31
-Z9 !s108 1740760978.000000
-!s107 C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/debouncer.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts|C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/debouncer.v|
-!i113 0
-R6
-R7
-R2
-vone_shot
-2C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/one_shot.v
-R3
-!i10b 1
-!s100 jQ1KNbfmc]9Z^AK@:amOU2
-IDfbTaA2SO<a`fG<KH7BA`3
-R1
-w1740760018
-8C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/one_shot.v
-FC:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/one_shot.v
+w1741189119
+8C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/testbenches/RX_tb.v
+FC:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/testbenches/RX_tb.v
 !i122 1
-L0 1 13
+L0 2 55
 R4
 R5
 r1
 !s85 0
 31
-R9
-!s107 C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/one_shot.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts|C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/one_shot.v|
-!i113 0
 R6
-R7
-R2
-vTX
-2C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/TX.v
-R3
-!i10b 1
-!s100 c5iYiDCXch5i:@lFV=YMo0
-IkC9KzD^A0Haa?gdd0V8=N1
-R1
-R8
-8C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/TX.v
-FC:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/TX.v
-!i122 3
-L0 1 138
-R4
-R5
-r1
-!s85 0
-31
-R9
-!s107 C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/TX.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts|C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/TX.v|
+!s107 C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/testbenches/RX_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/testbenches|C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/testbenches/RX_tb.v|
 !i113 0
-R6
 R7
+!s92 -vlog01compat -work work +incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/testbenches -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
-n@t@x
-vTX_tb
-2C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/TX_tb.v
-R3
-!i10b 1
-!s100 W?UcGI1OXY?I9:YQ`fYhG0
-Ii2EWRznjQOfoB6Q^YXPED2
-R1
-w1740760937
-8C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/TX_tb.v
-FC:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/TX_tb.v
-!i122 4
-L0 3 28
-R4
-R5
-r1
-!s85 0
-31
-R9
-!s107 C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/TX_tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts|C:/Users/dmart/Logica-Programable-/QuartusProjects/05_UART/scripts/TX_tb.v|
-!i113 0
-R6
-R7
-R2
-n@t@x_tb
+n@r@x_tb

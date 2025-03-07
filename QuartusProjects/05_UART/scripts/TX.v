@@ -1,8 +1,9 @@
 module TX (
     //Declaracion de puertos de entrada y salida
-    input [0:7] data_in,
-    input clk, rst, send_data,
-    output reg serial_out
+    input [9:0] SW,
+    input MAX10_CLK1_50, rst,
+    input [1:0] KEY,
+    output reg [35:0] GPIO
 );
     //Declaracion de parametros
     localparam base_freq = 50_000_000;
@@ -23,25 +24,25 @@ module TX (
     reg parity_counter;
     reg parity_flag;
 
-    //Declaracion de wires
+
+    wire send = ~KEY[0];
     wire debounced_send;
 
-    //Instanciacion del modulo debouncer
-    debouncer debounce_in(
-        .clk(clk),
+    debouncer DB1 (
+        .clk(MAX10_CLK1_50),
         .rst(rst),
-        .pb_in(send_data),
-        .pb_out(debounced_send)
+        .pb_in(send),
+        .pb_out(debounced_send),
     );
 
-    one_shot os(
-        .clk(clk),
-        .rst(rst),
-        .pb_in(debounced_send),
-        .pb_out(one_shot_debounced_send)
+    one_shot OS1 (
+        .clk(MAX10_CLK1_50),
+        .in_shot(send),
+        .one_shot_button(send_pulse)
     );
 
-    always @(posedge clk or negedge rst)
+    //Maquina de estados
+    always @(posedge MAX10_CLK1_50 or negedge rst)
         begin
             if (~rst)
             begin
@@ -52,16 +53,18 @@ module TX (
                 case (current_state)
                     TX_IDLE: 
                         begin
+                            GPIO[0] <= 1;
                             clock_ctr <= 0;
                             d_idx <= 0;
-                            if (one_shot_debounced_send)
+                            parity_counter <= 0;
+                            if (send_pulse == 1)
                                 current_state <= TX_START;
                             else
                                 current_state <= TX_IDLE;
                         end
                     TX_START:
                         begin
-                            serial_out <= 0;
+                            GPIO[0] <= 0;
                             if (clock_ctr < counts_per_bit)
                             begin
                                 clock_ctr <= clock_ctr + 1;
@@ -75,8 +78,8 @@ module TX (
                         end
                     TX_DATA:
                         begin
-                            serial_out <= data_in[d_idx];
-                            if (serial_out == 1)
+                            GPIO[0] <= SW[d_idx];
+                            if (GPIO[0] == 1)
                             begin
                                 parity_counter <= parity_counter + 1;
                             end
@@ -90,7 +93,7 @@ module TX (
                                     clock_ctr <= 0;
                                     if (d_idx < 7)
                                         begin
-														  d_idx <= d_idx + 1;
+											d_idx <= d_idx + 1;
                                             current_state <= TX_DATA;
                                         end
                                     else
@@ -102,11 +105,11 @@ module TX (
                             parity_flag <= parity_counter % 2;
                             if (parity_flag == 1)
                                 begin
-                                    serial_out <= 1;
+                                    GPIO[0] <= 1;
                                 end
                             else    
                                 begin
-                                    serial_out <= 0;
+                                    GPIO[0] <= 0;
                                 end
                             if (clock_ctr < counts_per_bit)
                                 begin
@@ -121,7 +124,7 @@ module TX (
                         end
                     TX_STOP:
                         begin
-                            serial_out <= 1;
+                            GPIO[0] <= 1;
                             if (clock_ctr < counts_per_bit)
                                 begin
                                     clock_ctr <= clock_ctr + 1;
