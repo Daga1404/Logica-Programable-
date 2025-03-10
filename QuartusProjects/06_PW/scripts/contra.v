@@ -16,10 +16,10 @@ module contra (
     reg [3:0] password [3:0];
 
     initial begin
-        password[0] = 4'd0; // SW[0]
-        password[1] = 4'd1; // SW[1]
-        password[2] = 4'd2; // SW[2]
-        password[3] = 4'd3; // SW[3]
+        password[0] = 7; // SW[0]
+        password[1] = 8; // SW[1]
+        password[2] = 6; // SW[2]
+        password[3] = 5; // SW[3]
     end
 
     // Detección de flanco positivo
