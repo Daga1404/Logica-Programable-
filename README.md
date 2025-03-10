@@ -24,8 +24,8 @@ Cable de programación JTAG
     │──02_BCD #Practica numero 2, Decodificador de binario a Decimal con salida a display de 7 segmentos.
     │──03_CounterBCD #Practica numero 3, Contador con divisor de reloj y salida a display de 7 segmentos. (Implementado como un reloj HH:MM:SS).
     │──04_PWM #Practica numero 4, Implementacion de PWM con Duty Cycles para control de un servomotor.
-    │──
-    │──
+    │──05_UART #Practica numero 5, Implementacion de transmisor y receptor serial UART.
+    │──06_PW #Practica numero 6, Modulo que reconoce si se introduce la contraseña correcta en los switches y proyecta en LEDS y displays de 7 segmentos 
     │──
     │──
     │──
