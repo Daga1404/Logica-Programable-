@@ -19,7 +19,7 @@
 #
 # Quartus Prime
 # Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-# Date created = 07:35:14  February 24, 2025
+# Date created = 08:35:39  March 04, 2025
 #
 # -------------------------------------------------------------------------- #
 #
@@ -39,10 +39,14 @@
 
 set_global_assignment -name FAMILY "MAX 10"
 set_global_assignment -name DEVICE 10M50DAF484C7G
-set_global_assignment -name TOP_LEVEL_ENTITY debouncer
+set_global_assignment -name TOP_LEVEL_ENTITY PWM
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.1STD.0
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "07:35:14  FEBRUARY 24, 2025"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "08:35:39  MARCH 04, 2025"
 set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.0 Lite Edition"
+set_global_assignment -name VERILOG_FILE scripts/PWM.v
+set_global_assignment -name VERILOG_FILE scripts/dff.v
+set_global_assignment -name VERILOG_FILE scripts/debouncer.v
+set_global_assignment -name VERILOG_FILE scripts/ClockDivider.v
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -54,20 +58,12 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
-set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name VERILOG_FILE scripts/one_shot.v
-set_global_assignment -name VERILOG_FILE scripts/clk_divider.v
-set_global_assignment -name VERILOG_FILE testbenches/debouncer_tb.v
-set_global_assignment -name VERILOG_FILE scripts/dff.v
-set_global_assignment -name VERILOG_FILE scripts/debouncer.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH debouncer_tb -section_id eda_simulation
-set_global_assignment -name EDA_TEST_BENCH_NAME debouncer_tb -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id debouncer_tb
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME debouncer_tb -section_id debouncer_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE testbenches/debouncer_tb.v -section_id debouncer_tb
+set_location_assignment PIN_V10 -to PWM
+set_location_assignment PIN_A7 -to btn_down
+set_location_assignment PIN_P11 -to clk
+set_location_assignment PIN_B8 -to btn_up
+set_location_assignment PIN_C10 -to enable
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

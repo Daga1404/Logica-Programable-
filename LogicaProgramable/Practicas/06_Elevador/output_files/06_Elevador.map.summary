@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Fri Feb 28 08:29:13 2025
+Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Revision Name : 06_Elevador
+Top-level Entity Name : floor_select
+Family : MAX 10
+Total logic elements : 8
+    Total combinational functions : 8
+    Dedicated logic registers : 5
+Total registers : 5
+Total pins : 14
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

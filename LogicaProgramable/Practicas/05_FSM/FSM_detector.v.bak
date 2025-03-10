@@ -1,0 +1,9 @@
+module FSM_detector (
+    input MAX10_CLK1_50, rst_a_p,
+    input [9:0] SW,
+    output reg [0:6] HEX0,
+    output reg [9:0] LEDR
+);
+
+
+endmodule

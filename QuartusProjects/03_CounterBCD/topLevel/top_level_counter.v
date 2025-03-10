@@ -1,82 +1,111 @@
 module top_level_counter #(
     parameter IN = 6
 )(
-    input CLOCK_50,
-    output [0:6] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5,
-    output [9:0] LEDR 
+    input MAX10_CLK1_50, // Reloj principal
+    input [9:0] SW,      // SW[0] = reset, SW[1] = up_down 
+    output [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5
 );
+
     wire CLOCK_50_div;
     wire [IN-1:0] count_sec;
     wire [IN-1:0] count_min;
-    wire [IN-1:0] count_hour;
-    reg sec_reset_reg;
-    reg min_reset_reg;
+    wire [4:0] count_hour; 
+    wire debouncer_rst;
 
-    // Clock Divider Instance
-    clk_divider CD (
-        .clk(CLOCK_50), 
-        .rst(0), 
+    reg tick_min;  
+    reg tick_hour; 
+
+    // Debouncer para reset
+    debouncer RESET (
+        .clk(MAX10_CLK1_50),
+        .debouncer_in(SW[0]),
+        .rst_a_p(SW[2]),
+        .debouncer_out(debouncer_rst)
+    );
+
+    clk_divider #(.FREQ(500_000)) CD (
+        .clk(MAX10_CLK1_50),
+        .rst(debouncer_rst),
         .clk_div(CLOCK_50_div)
     );
 
-    // Seconds Counter
-    counter SECONDS (
+    // Contador de segundos
+    up_down_counter #(.OUT_WIDTH(6), .MAX_COUNT(59)) SECONDS (
         .clk(CLOCK_50_div),
-        .rst(sec_reset_reg), 
-        .enable(1), 
+        .reset(debouncer_rst),
+        .up_down(SW[1]),
+        .tick(1),  // Segundos siempre cuentan
         .count(count_sec)
     );
 
-    // BCD Decoder for Seconds Display
     bcd_decoder BD_SECONDS (
-        .bcd_in(count_sec), 
-        .bcd_out1(HEX0), 
+        .bcd_in(count_sec),
+        .bcd_out1(HEX0),
         .bcd_out2(HEX1)
     );
 
-    // Generate a one-cycle pulse for the minute counter enable
-    always @(posedge CLOCK_50_div) begin
-        if (count_sec == 6'd59)
-            sec_reset_reg <= 1;
-        else
-            sec_reset_reg <= 0;
+    always @(posedge CLOCK_50_div or posedge debouncer_rst) begin
+        if (debouncer_rst)
+            tick_min <= 1'b0;
+        else if (SW[1]) begin // Modo UP
+            if (count_sec == 59)
+                tick_min <= 1'b1;
+            else
+                tick_min <= 1'b0;
+        end
+        else begin // Modo DOWN
+            if (count_sec == 0)
+                tick_min <= 1'b1;
+            else
+                tick_min <= 1'b0;
+        end
     end
 
-    // Minutes Counter
-    counter MINUTES (
+    // Contador de minutos
+    up_down_counter #(.OUT_WIDTH(6), .MAX_COUNT(59)) MINUTES (
         .clk(CLOCK_50_div),
-        .rst(0), 
-        .enable(sec_reset_reg),  // Use latched pulse
+        .reset(debouncer_rst),
+        .up_down(SW[1]),
+        .tick(tick_min),
         .count(count_min)
     );
 
-    // BCD Decoder for Minutes Display
     bcd_decoder BD_MINUTES (
-        .bcd_in(count_min), 
-        .bcd_out1(HEX2), 
+        .bcd_in(count_min),
+        .bcd_out1(HEX2),
         .bcd_out2(HEX3)
     );
 
-    always @(posedge CLOCK_50_div) begin
-        if (count_min == 6'd59)
-            min_reset_reg <= 1;
-        else
-            min_reset_reg <= 0;
+    always @(posedge CLOCK_50_div or posedge debouncer_rst) begin
+        if (debouncer_rst)
+            tick_hour <= 1'b0;
+        else if (SW[1]) begin // Modo UP
+            if (tick_min && count_min == 59)
+                tick_hour <= 1'b1;
+            else
+                tick_hour <= 1'b0;
+        end
+        else begin // Modo DOWN
+            if (tick_min && count_min == 0)
+                tick_hour <= 1'b1;
+            else
+                tick_hour <= 1'b0;
+        end
     end
 
-    counter HOURS (
+    // Contador de horas (0-23)
+    up_down_counter #(.OUT_WIDTH(5), .MAX_COUNT(23)) HOURS (
         .clk(CLOCK_50_div),
-        .rst(0), 
-        .enable(min_reset_reg),  // Use latched pulse
+        .reset(debouncer_rst),
+        .up_down(SW[1]),
+        .tick(tick_hour),
         .count(count_hour)
     );
 
     bcd_decoder BD_HOURS (
-        .bcd_in(count_hour), 
-        .bcd_out1(HEX4), 
+        .bcd_in(count_hour),
+        .bcd_out1(HEX4),
         .bcd_out2(HEX5)
     );
-
-
 
 endmodule

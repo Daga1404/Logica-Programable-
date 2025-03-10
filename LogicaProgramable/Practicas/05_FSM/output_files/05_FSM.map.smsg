@@ -1,0 +1,1 @@
+Info (10281): Verilog HDL Declaration information at FSM_detector.v(7): object "slow_clk" differs only in case from object "SLOW_CLK" in the same scope File: C:/Users/dmart/Logica-Programable-/LogicaProgramable/Practicas/05_FSM/scripts/FSM_detector.v Line: 7
