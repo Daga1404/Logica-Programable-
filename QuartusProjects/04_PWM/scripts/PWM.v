@@ -6,11 +6,11 @@ module PWM (
     output reg PWM
 );
 
-    // Parámetros para la señal PWM para servo
+    // Parámetros para la señal PWM para servo0470
     parameter PERIOD = 1_000_000;     // 20 ms (50 MHz)
     parameter PULSE_MIN = 25_000;     // Pulso mínimo (por ejemplo, 0.5 ms)
     parameter PULSE_MAX = 125_000;    // Pulso máximo (por ejemplo, 2.5 ms)
-    parameter STEP_PERCENT = 20;      // Incremento/decremento en duty cycle por clic
+    parameter STEP_PERCENT = 10;      // Incremento/decremento en duty cycle por clic
 
     // Señales debounced y clock lento
     wire btn_up_stable;
@@ -95,6 +95,5 @@ module PWM (
     end
 
 endmodule
-
 
 
